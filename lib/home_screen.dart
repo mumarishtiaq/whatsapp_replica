@@ -1,6 +1,9 @@
+import 'dart:ui_web';
+
 import 'package:flutter/material.dart';
 import 'package:whatsapp_replica/calls_view.dart';
 import 'package:whatsapp_replica/chats_view.dart';
+import 'package:whatsapp_replica/custom_appbar.dart';
 import 'package:whatsapp_replica/status_view.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,38 +26,20 @@ int _selectedIndex = 0;
     setState(() {
       _selectedIndex = index;
     });
-  }
+    }
+
+    
+  
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: const Color(0xFF121B22),
-      appBar: AppBar(title: Text(
-        "WhatsApp",
-      style: TextStyle(color: const Color(0xFF25D366), fontWeight: FontWeight.bold,fontSize: 20),
-      ),
-      backgroundColor: const Color(0xFF121B22),),
-      body: Column(children: [
-        Padding(
-          padding:const EdgeInsets.all(8.0),
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: "Ask Meta AI or Search ",
-              prefixIcon: Icon(Icons.search, color: Colors.grey,),
-              filled: true,
-              fillColor: const Color(0xFF1F2C34),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0),borderSide: BorderSide.none),
-              hintStyle: TextStyle(color: Colors.grey)
-            ),
-            style: TextStyle(color: Colors.white),
-          ),
-          ),
-          Expanded(child: _views[_selectedIndex]),
-
-      ],),
+      appBar: getAppBarForTab(_selectedIndex),
+      body: _views[_selectedIndex],
       
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.chat,size: 30,), label: 'Chat'),
+          BottomNavigationBarItem(icon: Icon(Icons.chat,size: 30,), label: 'Chats'),
           BottomNavigationBarItem(icon: Icon(Icons.update,size: 30,), label: 'Updates'),
           BottomNavigationBarItem(icon: Icon(Icons.call,size: 30,), label: 'Calls'),
         ],
