@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 Widget ChatTemplate(name , msg , time , avatar,unreadCount)
 {
+  Color col = unreadCount > 0 ? const Color(0xFF25D366) : Colors.grey;
   return ListTile(
     contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     leading: CircleAvatar(
@@ -16,7 +17,7 @@ Widget ChatTemplate(name , msg , time , avatar,unreadCount)
   children: [
     Text(
       time,
-      style: const TextStyle(color: Colors.grey, fontSize: 12),
+      style:  TextStyle(color:col, fontSize: 12),
     ),
     if (unreadCount> 0) ...[
       const SizedBox(height: 6),

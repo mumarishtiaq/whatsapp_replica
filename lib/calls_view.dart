@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_replica/call_template.dart';
+import 'package:whatsapp_replica/templates/call_template.dart';
 
 class CallsView extends StatelessWidget {
    CallsView({super.key});

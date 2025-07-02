@@ -1,9 +1,7 @@
-import 'dart:ui_web';
-
 import 'package:flutter/material.dart';
 import 'package:whatsapp_replica/calls_view.dart';
 import 'package:whatsapp_replica/chats_view.dart';
-import 'package:whatsapp_replica/custom_appbar.dart';
+import 'package:whatsapp_replica/templates/custom_appbar.dart';
 import 'package:whatsapp_replica/status_view.dart';
 
 class HomeScreen extends StatefulWidget {
