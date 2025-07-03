@@ -116,6 +116,7 @@ final List _calls = [
   @override
   Widget build(BuildContext context) {
     return  ListView.builder(itemCount: _calls.length, 
+      physics: BouncingScrollPhysics(),
     itemBuilder: (context , index){
       
       if(index == 0 )

@@ -137,6 +137,7 @@ final List<Map<String, dynamic>> _chats = [
       ),
       Expanded(
         child: ListView.builder(
+        physics: BouncingScrollPhysics(),
           itemCount: _chats.length,
           itemBuilder: (context, index) {
             final chat = _chats[index];
